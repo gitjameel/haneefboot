@@ -1,4 +1,7 @@
-FROM java:8-jdk-alpine
+#FROM java:8-jdk-alpine
+FROM maven:3.6.3-ibmjava-8-alpine
+
+RUN mvn clean install -DskipTests
 
 COPY ./target/haneefboot-0.0.1-SNAPSHOT.jar /usr/app/
 
